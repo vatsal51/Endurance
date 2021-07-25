@@ -10,7 +10,7 @@ const Form = ({ inputHandler, inputValue, sumbitHandler, isLoading }) => {
         <div className="url-shortner ">
 
           <div className="inner-wrap">
-            <input type="text" className="form__input--error"
+            <input type="text" className="form-input--error"
               onChange={inputHandler}
               value={inputValue}
               placeholder="Shorten a link here" />
@@ -19,7 +19,7 @@ const Form = ({ inputHandler, inputValue, sumbitHandler, isLoading }) => {
               <input type="submit" value="Shorten it!" className="input-btn" />}
 
           </div>
-          <label className='form__label form__label--error'>
+          <label className='form-label form-label--error'>
             Please add a link
           </label>
         </div>

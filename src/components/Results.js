@@ -12,7 +12,7 @@ const Results = ({ shortLinksList, copyHandler }) => {
 
   return (
     <section className='results'>
-      <div className='results__container mw'>{shortLinksListMap}</div>
+      <div className=' mw'>{shortLinksListMap}</div>
     </section>
   );
 };

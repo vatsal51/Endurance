@@ -14,12 +14,12 @@ const Result = ({ linkFrom, linkTo, onCopy }) => {
 
   return (
     <div className='result'>
-      <div className='result__links-wrap'>
-        <p className='result__from'>{linkFrom}</p>
-        <p className='result__to'>{linkTo}</p>
+      <div className='result-links-wrap'>
+        <p className='result-from'>{linkFrom}</p>
+        <p className='result-to'>{linkTo}</p>
       </div>
       <CopyToClipboard text={linkTo} onCopy={onCopy}>
-        <button onClick={handleCopiedBtnStyle} className='result__btn'>
+        <button onClick={handleCopiedBtnStyle} className='result-btn'>
           Copy
         </button>
       </CopyToClipboard>

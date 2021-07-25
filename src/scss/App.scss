@@ -1,20 +1,3 @@
-// @import "./config/variables";
-// @import "./config/base";
-
-// @import "./components/btn";
-
-// @import "./components/Header";
-// @import "./components/Navigation";
-// @import "./components/Intro";
-// @import "./components/Form";
-// @import "./components/Results";
-// @import "./components/Result";
-// @import "./components/Info";
-// @import "./components/Option";
-// @import "./components/Summation";
-// @import "./components/Footer";
-// @import "./components/Loader";
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
 $primary-col-1: hsl(180, 66%, 49%);
 $primary-col-2: hsl(257, 27%, 26%);
@@ -36,6 +19,7 @@ body {
 	margin: 0;
 	padding: 0;
 	font-weight: 500;
+	transition: 0.3s all ease-in-out;
 }
 .mw {
 	max-width: 1440px;
@@ -49,10 +33,11 @@ ul li {
 		text-decoration: none;
 		color: $neutral-grey;
 		font-weight: 500;
+		transition: 0.3s all ease-in-out;
 	}
 }
 
-
+// HEADER
 header {
 	z-index: 10;
 	width: 100%;
@@ -77,6 +62,7 @@ header {
 			text-decoration: none;
 			font-weight: 700;
 			color: $neutral-grey;
+			transition: 0.3s all ease-in-out;
 		}
 	}
 	.wrapper {
@@ -84,6 +70,7 @@ header {
 		display: flex;
 		justify-content: space-between;
 		margin-left: 20px;
+
 		ul li a {
 			&:hover {
 				color: $neutral-dark-violet;
@@ -96,18 +83,29 @@ header {
 	.header-logo {
 		align-self: center;
 		margin-top: 10px;
+		a {
+			display: block;
+			transition: 0.3s all ease-in-out;
+			&:hover svg path {
+				fill: $primary-col-1;
+			}
+		}
 	}
 	.header-logins {
 		justify-self: flex-end;
-
+		transition: 0.3s all ease-in-out;
+		a:hover {
+			// color: $neutral-dark-violet;
+			color: $primary-col-1;
+		}
 		.sign-up {
 			padding: 10px 20px;
 			border-radius: 25px;
 			background: $primary-col-1;
 			color: #fff;
+			transition: 0.3s all ease-in-out;
 			&:hover {
-				transition: 0.3s all ease-in-out;
-				background: lighten($primary-col-1,20%);
+				background: lighten($primary-col-1, 20%);
 				color: #fff;
 			}
 			@media screen and (max-width: 769px) {
@@ -117,10 +115,13 @@ header {
 		}
 	}
 }
+
+// header end
+
+// intro start
 .overflow {
 	overflow-x: hidden;
 }
-
 
 .intro {
 	display: flex;
@@ -134,7 +135,7 @@ header {
 		h1 {
 			font-size: 4rem;
 			margin-bottom: 10px;
-			line-height: 4rem;
+			line-height: 4.5rem;
 		}
 		p {
 			width: 80%;
@@ -152,9 +153,10 @@ header {
 			border-radius: 50px;
 			background: $primary-col-1;
 			color: #fff;
+			font-weight: 700;
+			transition: 0.3s all ease-in-out;
 			&:hover {
-				transition: 0.3s all ease-in-out;
-				background: lighten($primary-col-1,20%);
+				background: lighten($primary-col-1, 20%);
 			}
 		}
 	}
@@ -172,6 +174,10 @@ header {
 		}
 	}
 }
+
+// intro end
+
+// url shortner starts
 .result {
 	display: flex;
 	padding: 15px 20px;
@@ -183,7 +189,7 @@ header {
 	flex-grow: 1;
 	background-color: #fff;
 	border-radius: 10px;
-	&__from {
+	&-from {
 		flex-grow: 1;
 		padding: 0;
 		border-style: none;
@@ -193,11 +199,11 @@ header {
 		padding: 0;
 		border-style: none;
 	}
-	&__to {
+	&-to {
 		padding: 10px 15px;
 		color: $primary-col-1;
 	}
-	&__links-wrap {
+	&-links-wrap {
 		flex-grow: 1;
 		display: flex;
 		flex-wrap: wrap;
@@ -205,7 +211,7 @@ header {
 		margin-right: 30px;
 		justify-content: space-between;
 	}
-	&__btn {
+	&-btn {
 		// margin: 0 15px 15px;
 		width: 150px;
 		padding: 10px 25px;
@@ -227,39 +233,9 @@ header {
 		}
 	}
 }
-//     &__from {
-//         padding: 10px 15px;
-//         border-bottom: 1px solid $color-neutral-gray;
-//     }
 
-//     &__to {
-//         padding: 10px 15px;
-//         color: $color-primary-cyan;
-//     }
-
-//     &__btn {
-//         margin: 0 15px 15px;
-//         padding: 7px;
-//         font-family: $font-family-default;
-//         font-size: $font-size-default;
-//         border-radius: 10px;
-//         outline: none;
-//         border-style: none;
-//         background-color: $color-primary-cyan;
-//         color: #fff;
-//         cursor: pointer;
-
-//         &--active {
-//             background-color: $color-primary-violet;
-//         }
-
-//         &:hover {
-//             background-color: lighten(hsl(180, 66%, 49%), 20%);
-//         }
-//     }}
 .url-short {
 	position: relative;
-	padding-bottom: 100px;
 	&::after {
 		content: "";
 		display: block;
@@ -274,11 +250,11 @@ header {
 
 	.form {
 		&.error {
-			& .form__input--error {
+			& .form-input--error {
 				box-shadow: inset 0 0 0 3px red;
 			}
 
-			& .form__label--error {
+			& .form-label--error {
 				display: block;
 				visibility: visible;
 				position: absolute;
@@ -287,10 +263,10 @@ header {
 				width: 100%;
 			}
 		}
-		.form__label {
+		.form-label {
 			display: none;
 			margin: 5px 0 0;
-			font-size: 0.7rem;
+			font-size: 0.8rem;
 			font-style: italic;
 			visibility: hidden;
 
@@ -337,8 +313,10 @@ header {
 					border-radius: 10px;
 					color: #fff;
 					background: $primary-col-1;
+					transition: 0.3s all ease-in-out;
+					cursor: pointer;
 					&:hover {
-						background: lighten($primary-col-1,20%);
+						background: lighten($primary-col-1, 20%);
 					}
 				}
 			}
@@ -357,6 +335,7 @@ header {
 			color: $neutral-grey;
 		}
 	}
+
 	.brand-wrapper {
 		max-width: 1440px;
 		margin: auto;
@@ -366,26 +345,38 @@ header {
 			justify-content: center;
 			max-width: 100%;
 			margin-bottom: 100px;
-			min-height: 350px;
+			// min-height: 350px;
+			padding-bottom: 50px;
 			gap: 75px 30px;
+			@media screen and (max-width: 901px) {
+				flex-wrap: nowrap;
+				max-width: 100%;
+				margin-bottom: 100px;
+				// min-height: 350px;
+				gap: 75px 30px;
+				flex-direction: column;
+			}
 			.brand {
 				position: relative;
 				background: white;
 				flex-basis: 30%;
+				// margin: 150px 100px;
 				// align-self: flex-start;
 				padding: 40px;
 				border-radius: 10px;
 				h2 {
 					font-size: 1.3rem;
 					margin: 30px 0 20px;
+					word-wrap: break-word;
 				}
 				p {
 					font-size: 0.8rem;
 				}
 			}
+
 			.brand2,
 			.brand3 {
-				align-self: center;
+				// align-self: center;
 				&::before {
 					content: "";
 					position: absolute;
@@ -397,10 +388,7 @@ header {
 				&::before {
 					left: -30px;
 				}
-				// &::after {
-				// 	right: -30px;
-				// }
-				@media screen and (max-width: 769px) {
+				@media screen and (max-width: 901px) {
 					&::before {
 						top: -64px;
 						right: 0;
@@ -409,23 +397,22 @@ header {
 						margin: 0 auto;
 						transform: rotate(90deg);
 					}
-					// @media screen and (max-width: 769px) {
-					// 	&::after {
-					// 		bottom: 0;
-					// 		right: 0;
-					// 		left: 0;
-					// 		top: 254px;
-					// 		margin: 0 auto;
-					// 		transform: rotate(90deg);
-					// 	}
-					// }
 				}
 			}
-			.brand1 {
-				align-self: flex-start;
+
+			.brand2 {
+				// align-self: flex-start;
+				transform: translateY(45px);
+				@media screen and (max-width: 900px) {
+					transform: translateY(0);
+				}
 			}
 			.brand3 {
-				align-self: flex-end;
+				// align-self: flex-end;
+				transform: translateY(90px);
+				@media screen and (max-width: 900px) {
+					transform: translateY(0);
+				}
 			}
 			.brand-svg {
 				position: absolute;
@@ -434,22 +421,34 @@ header {
 				padding: 22px 25px;
 				background: $primary-col-2;
 				border-radius: 50%;
-				@media screen and (max-width: 769px) {
+
+				@media screen and (max-width: 901px) {
 					width: 90px;
 					left: 0;
 					right: 0;
 					margin: auto;
+				}
+				img {
+					width: 40px;
 				}
 			}
 			.brand-desc {
 				p {
 					color: $neutral-grey;
 				}
+
+				@media screen and (max-width) {
+					text-align: center;
+					word-wrap: break-word;
+				}
 			}
 		}
 	}
 }
 
+// url shortner ends
+
+// biist links start
 .boost-links {
 	text-align: center;
 	height: 250px;
@@ -463,6 +462,14 @@ header {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	@media screen and (max-width: 769px) {
+		background: url(\images\bg-boost-mobile.svg);
+		background-color: $primary-col-2;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: right top;
+	}
 	h3 {
 		font-weight: 700;
 		font-size: 1.6rem;
@@ -477,11 +484,16 @@ header {
 		padding: 20px 40px;
 		background: $primary-col-1;
 		border-radius: 50px;
+		transition: 0.3s all ease-in-out;
 		&:hover {
-			background: lighten($primary-col-1,20%);
+			background: lighten($primary-col-1, 20%);
 		}
 	}
 }
+
+// boost link ends
+
+// footer starts
 .common-hover {
 	a:hover svg path {
 		fill: $primary-col-1;
@@ -498,30 +510,40 @@ footer {
 	* {
 		max-width: 100%;
 	}
-	.footer-wrap {
+	.footer {
 		display: flex;
 		flex-wrap: wrap;
 		max-width: 1440px;
 		margin: auto;
 		padding: 5% 0;
-		.footer-brand {
+		&-brand {
 			flex: 1 0 400px;
+			margin-bottom: 20px;
 			@media screen and (max-width: 426px) {
 				text-align: center;
 			}
 		}
-		.footer-links {
+		&-links {
 			display: flex;
 			flex-wrap: wrap;
 			flex: 3 0 700px;
 			column-gap: 70px;
-			justify-content: center;
+			justify-content: space-between;
+			@media screen and (max-width: 426px) {
+				flex-direction: column;
+				align-items: center;
+				margin-top: 20px;
+			}
 			.links {
+				@media screen and (max-width: 426px) {
+					text-align: center;
+				}
 				h5 {
 					color: #fff;
 					font-weight: 700;
 					padding-top: 0;
-					padding-bottom: 30px;
+					// padding-bottom: 30px;
+					margin-top: 0;
 					@media screen and (max-width: 426px) {
 						text-align: center;
 						width: 100%;
@@ -549,31 +571,18 @@ footer {
 						@media screen and (max-width: 426px) {
 							padding: 0 10px;
 						}
-						
 					}
 				}
 			}
 		}
 	}
 }
-// .wrapper ul,
-// .header-logins {
-// 	display: flex;
-// 	justify-content: center;
-// 	align-items: center;
-// 	gap: 20px;
-// 	@media screen and (max-width: 769px) {
-// 		flex-direction: column;
-// 	}
-// 	a {
-// 		text-decoration: none;
-// 		font-weight: 700;
-// 		color: $neutral-grey;
-// 	}
-// }
+
+// footer ends
 
 // MEDIA QUERIRES
 @media screen and (max-width: 769px) {
+	// HEADER
 	header {
 		position: fixed;
 	}
@@ -637,40 +646,29 @@ footer {
 		right: 30px;
 		display: block;
 	}
-	.working {
+
+	// INTRO
+	.intro {
 		flex-direction: column;
+		margin-top: 80px;
 	}
-	.working .text {
+	.intro .intro-text {
 		text-align: center;
 	}
-	.working .text h1 {
-		font-size: 30px;
-		line-height: 30px;
+	.intro .intro-text h1 {
+		font-size: 2rem;
+		line-height: 2.5rem;
 	}
-	.working .work {
+	.intro .work {
 		order: -1;
 	}
+	.intro .work img {
+		transform: translateX(0);
+	}
+
+	// URL SHORTNER
 	.url-short .url-shortner {
 		background: url(\images\bg-shorten-mobile.svg);
-		background-color: $primary-col-2;
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: contain;
-		background-position: right top;
-	}
-	.url-short .brand-wrapper .brand-perform {
-		display: flex;
-		max-width: 100%;
-		margin-bottom: 100px;
-		min-height: 350px;
-		gap: 75px 30px;
-		flex-direction: column;
-	}
-	.url-short .brand-wrapper .brand-perform .brand-desc {
-		text-align: center;
-	}
-	.boost-links {
-		background: url(\images\bg-boost-mobile.svg);
 		background-color: $primary-col-2;
 		background-position: center;
 		background-repeat: no-repeat;
