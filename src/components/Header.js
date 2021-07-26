@@ -17,13 +17,13 @@ const Header = () => {
         </div>
         <div className="wrapper" id="wrapper">
           <ul>
-            <li><a href="#" >Features</a></li>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">Resources</a></li>
+            <li><a href="/" >Features</a></li>
+            <li><a href="/">Pricing</a></li>
+            <li><a href="/">Resources</a></li>
           </ul>
           <div className="header-logins">
-            <a href="#">Login</a>
-            <a href="#" className="sign-up">Sign Up</a>
+            <a href="/">Login</a>
+            <a href="/" className="sign-up">Sign Up</a>
           </div>
         </div>
         <div className="hamburger" id="hamburger" onClick={handleOnClick}>

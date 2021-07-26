@@ -14,11 +14,11 @@ const Main = () => {
           <div className="intro-text">
             <h1>More than just shorter links</h1>
             <p>Build you brand's recognition and get detailed insights on how your links are performing</p>
-            <a href="#">Get Started</a>
+            <a href="/">Get Started</a>
           </div>
           <div className="work">
             <img src={introImg} alt="intro">
-           
+
             </img>
           </div>
         </div>
@@ -38,7 +38,7 @@ const Main = () => {
               <div className="brand brand1">
                 <div className="brand-svg">
                   <img src={brand_recognition} alt="recognition"></img>
-                 
+
                 </div>
                 <div className="brand-desc">
                   <h2>Brand Recognition</h2>
@@ -50,7 +50,7 @@ const Main = () => {
               <div className="brand brand2">
                 <div className="brand-svg">
                 <img src={brand_details} alt="details"></img>
-                 
+
                 </div>
                 <div className="brand-desc">
                   <h2>Detailed Records</h2>
@@ -77,7 +77,7 @@ const Main = () => {
 
         <div className="boost-links">
           <h3>Boost your links today</h3>
-          <a href="#">Get Started</a>
+          <a href="/">Get Started</a>
         </div>
       </section>
     </>
